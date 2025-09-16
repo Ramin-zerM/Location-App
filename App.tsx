@@ -67,7 +67,6 @@ export default function App() {
     longitudeDelta: 0.01,
   };
 
-  // 🔎 ไปที่ตำแหน่งปัจจุบัน
   const handleGoToCurrentLocation = () => {
     if (location && mapRef.current) {
       mapRef.current.animateToRegion(
@@ -82,7 +81,6 @@ export default function App() {
     }
   };
 
-  // 📍 กดแผนที่เพื่อปักหมุด
   const handleAddTempMarker = (event: MapPressEvent) => {
     const { latitude, longitude } = event.nativeEvent.coordinate;
     setTempMarker({ latitude, longitude });
@@ -201,7 +199,6 @@ export default function App() {
       { height: Math.min(240, savedPlaces.length * 70 + 60)}, 
     ]}
   >
-    {/* Header ของลิสต์ */}
     <View style={styles.listHeader}>
       <Text style={styles.listTitle}>สถานที่ที่บันทึกไว้</Text>
       <TouchableOpacity onPress={closeList}>
